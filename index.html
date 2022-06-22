@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="logo">
+                <a href="/">치아 요정</a>
+            </div>
+            <img src="./image/img1.png" alt="">
+        </header>
+        <main>
+            <form id="actionForm" action="./ok.html" method="post">
+                <div class="con1">
+                    <p>무료 치아 검사</p>
+                    <p class="sm">여러분의 치아을 자가검진 해보세요.</p>
+                </div>
+                <div class="question">
+                    <p>1. 유치에 충치가 생겼던 경험이 있습니까?</p>
+                    <div class="icon">
+
+                        <input type="radio" name="answer1" value="1">예<br>
+                        <input type="radio" name="answer1" value="2">아니오
+
+                    </div>
+                </div>
+                <div class="question">
+                    <p>2. 지금까지 충치가 생겼던 유치는 몇 개 입니까?</p>
+                    <div class="icon">
+                        <input type="radio" name="answer2" value="1">없음
+                        <input type="radio" name="answer2" value="2">1개 ~ 3개
+                        <input type="radio" name="answer2" value="3">3개 ~ 5개
+                        <input type="radio" name="answer2" value="4">5개이상
+                    </div>
+                </div>
+                <div class="question">
+                    <p>3. 지금까지 치료 받았던 유치의 개수는 몇 개 입니까?</p>
+                    <div class="icon">
+                        <input type="radio" name="answer3" value="1">없음
+                        <input type="radio" name="answer3" value="2">1개 ~ 3개
+                        <input type="radio" name="answer3" value="3">3개 ~ 5개
+                        <input type="radio" name="answer3" value="4">5개이상
+                    </div>
+                </div>
+                <div class="question">
+                    <p>4. 충치가 생겼던 유치의 면수는 얼마입니까?</p>
+                    <div class="icon">
+                        <input type="radio" name="answer4" value="1">없음
+                        <input type="radio" name="answer4" value="2">1면이상 ~ 5면미만
+                        <input type="radio" name="answer4" value="3">5면이상 ~ 10면미만
+                        <input type="radio" name="answer4" value="4">10면이상
+                    </div>
+                </div>
+                <div class="question">
+                    <p>5. 치료 받았던 유치의 면수는 얼마입니까?</p>
+                    <div class="icon">
+                        <input type="radio" name="answer5" value="1">없음
+                        <input type="radio" name="answer5" value="2">1면이상 ~ 5면미만
+                        <input type="radio" name="answer5" value="3">5면이상 ~ 10면미만
+                        <input type="radio" name="answer5" value="4">10면이상
+                    </div>
+                </div>
+                <div class="question">
+                    <p>6. 현재 영구치에 충치가 있습니까?</p>
+                    <div class="icon">
+                        <input type="radio" name="answer6" value="1">예
+                        <input type="radio" name="answer6" value="2">아니오
+                    </div>
+                </div>
+                <div class="question">
+                    <p>7. 현재 유치에 몇 개의 충치가 있습니까?</p>
+                    <div class="icon">
+                        <input type="radio" name="answer7" value="1">없음
+                        <input type="radio" name="answer7" value="2">1개 ~ 3개
+                        <input type="radio" name="answer7" value="3">3개 ~ 5개
+                        <input type="radio" name="answer7" value="4">5개이상
+                    </div>
+                </div>
+                <div class="question">
+                    <p>8. 현재 충치가 있는 유치의 면수는 얼마입니까?</p>
+                    <div class="icon">
+                        <input type="radio" name="answer8" value="1">없음
+                        <input type="radio" name="answer8" value="2">1면이상 ~ 5면미만
+                        <input type="radio" name="answer8" value="3">5면이상 ~ 10면미만
+                        <input type="radio" name="answer8" value="4">10면이상
+                    </div>
+                </div>
+                <div class="ok">
+                    <a href="#" onclick="submit();">결과 보러 가기 -></a>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+<script>
+    function submit() {
+        for (var i = 1; i <= 8; i++) {
+            var checked = false;
+            var elements = document.getElementsByName('answer' + i);
+            for (var j = 0; j < elements.length; j++) {
+                if (elements[j].checked) {
+                    checked = true;
+                    break;
+                }
+            }
+            if (!checked) {
+                alert(i + "번 문항을 확인해주세요");
+                return false;
+            }
+        }
+        document.getElementById('actionForm').submit();
+    }
+
+</script>
+</html>

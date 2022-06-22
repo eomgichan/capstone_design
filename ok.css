@@ -1,0 +1,36 @@
+.con2 {position: relative; width: 60%; margin: 100px auto; transition: 0.5s all; }
+
+/* 막대바 디자인 */
+.con2 .bar1 {transition: 0.5s all; background-color: #2c5094; animation: w1 1s forwards; color: #fff; text-align: center; line-height: 50px; height: 50px; margin: 50px;}
+.con2 .bar2 {transition: 0.5s all; background-color: #417dec; animation: w2 1s forwards; color: #fff; text-align: center; line-height: 50px; height: 50px; margin: 50px;}
+.con2 .bar3 {transition: 0.5s all; background-color: #081631; animation: w3 1s forwards; color: #fff; text-align: center; line-height: 50px; height: 50px; margin: 50px;}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img img {
+    width: 40%;
+    object-fit: cover;
+}
+
+/* 천천히 늘어나는 애니메이션 */
+/* width %를 데이터 값을 가져와서 javascript 이용해서 변경하면된다 */
+@keyframes w1 {
+    0% {width: 0%;}
+    
+    100% {width: 80%;}
+}
+@keyframes w2 {
+    0% {width: 0%;}
+    
+    100% {width: 40%;}
+}
+@keyframes w3 {
+    0% {width: 0%;}
+    
+    100% {width: 70%;}
+}
